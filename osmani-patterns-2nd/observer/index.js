@@ -1,5 +1,3 @@
-import React from "https://esm.sh/react";
-
 class ObserverList {
   constructor() {
     this.observerList = [];
