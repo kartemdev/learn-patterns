@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MVC Pattern</title>
+  <style>
+    .photo-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .photo {
+      width: 300px;
+      border: 1px solid #CCC;
+      padding: 10px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    .photo img {
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>MVC Pattern Example</h1>
+  <div id="photoGallery" class="photo-container"></div>
+  <script src="./index.js" type="module"></script>
+</body>
+</html>
