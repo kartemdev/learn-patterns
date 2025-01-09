@@ -26,4 +26,4 @@ const makeRequestWithRetry = (url) => {
   return makeRequest().catch(retry);
 }
 
-makeRequestWithRetry('https://test.example/retry');
+makeRequestWithRetry('https://example.com/retry');

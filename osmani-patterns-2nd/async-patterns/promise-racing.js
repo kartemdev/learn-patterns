@@ -1,5 +1,5 @@
 const apiUrlTodos = 'https://jsonplaceholder.typicode.com/todos/1';
-const apiUrlPosts = 'https://jsonplaceholder.typicode.com/posts/1';
+const apiUrlPosts = 'https://jsonplaceholder.typicode.com/posts/10';
 
 const makeRequest = (url) => {
   return new Promise((resolve, reject) => (
@@ -10,9 +10,9 @@ const makeRequest = (url) => {
   ));
 };
 
-Promise.all([
+Promise.race([
   makeRequest(apiUrlTodos),
   makeRequest(apiUrlPosts),
-]).then(([data1, data2]) => {
-  console.log(data1, data2)
-})
+]).then(data => {
+  console.log(data)
+});
