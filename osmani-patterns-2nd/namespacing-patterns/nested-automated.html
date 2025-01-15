@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namespacing Nested Automated Pattern</title>
+</head>
+<body>
+  <button>Log user</button>
+  <button>Log home</button>
+  <button>Log parseCookie</button>
+
+  <script>
+    const myApp = {};
+
+    Object.prototype.extendNS = function(path) {
+      let parent = this;
+      const parts = path.split('.');
+
+      for (const part of parts) {
+        if (parent[part] === undefined) {
+          parent[part] = {};
+        }
+
+        
+        console.log(parent[part], part)
+        parent = parent[part];
+      }
+
+      return parent
+    };
+
+    myApp.extendNS('models.user')
+    myApp.extendNS('views.pages.home')
+    myApp.extendNS('utils.tools.auth.parseCookie')
+
+    document.querySelectorAll('button')[0].onclick = () => console.log(myApp.models.user);
+    document.querySelectorAll('button')[1].onclick = () => console.log(myApp.views.pages.home);
+    document.querySelectorAll('button')[2].onclick = () => console.log(myApp.utils.tools.auth.parseCookie);
+  </script>
+</body>
+</html>
