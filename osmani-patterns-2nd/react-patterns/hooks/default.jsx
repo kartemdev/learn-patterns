@@ -42,5 +42,5 @@ ReactDOM.render(
     <hr />
     <Timer />
   </div>,
-  document.getElementById('root')
+  document.getElementById('default')
 );
